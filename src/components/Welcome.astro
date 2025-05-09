@@ -68,7 +68,7 @@ const skills = [
           Desarrollador de Software Full-Stack especializado en crear experiencias digitales excepcionales
         </p>
         <div class="flex gap-4 justify-center">
-<Button client:load variant="default" size="lg" class="gap-2">
+          <Button client:load variant="default" size="lg" class="gap-2">
             <a href="#Projects" class="flex items-center gap-2">
               <Briefcase className="w-5 h-5" />
               Proyectos
@@ -101,7 +101,7 @@ const skills = [
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-white mb-2">{project.title}</h3>
-                <p class="text-gray-400 mb-4">{project.description}</p>
+                <p class="text-gray-200 mb-4">{project.description}</p>
                 <div class="flex flex-wrap gap-2 mb-4">
                   {project.tags.map(tag => (
                     <a client:load variant="secondary">{tag}</a>
@@ -141,7 +141,7 @@ const skills = [
                 </div>
                 <div class="flex flex-wrap gap-2">
                   {category.items.map(skill => (
-                    <a client:load variant="outline">{skill}</a>
+                    <a client:load variant="default" className="text-white bg">{skill}</a>
                   ))}
                 </div>
               </div>
