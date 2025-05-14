@@ -15,30 +15,31 @@ import { Button } from '@/components/ui/button';
 import { Github, ExternalLink, Code, Briefcase, Cpu, GraduationCap } from 'lucide-react';
 
 import background from '../assets/background.png';
+import lyra from '../assets/lyra.png';
 const projects = [
   {
     title: 'Lyra App E.R.P',
     description: 'Aplicación full-stack para gestión de recursos empresariales con autenticación y base de datos.',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Tailwind'],
-    image: '/images/project1.jpg',
+    image: 'src/assets/lyra.png',
     github: 'https://github.com/Not-Minimal/lyra-app',
-    demo: 'https://lyra-app.cl'
+    demo: 'https://lyra-app-self.vercel.app/'
   },
   {
     title: 'E-commerce Platform',
     description: 'Plataforma de comercio electrónico con panel de administración.',
     tags: ['Astro.build', 'Javascript', 'Cosmic SDK'],
-    image: '/images/project2.jpg',
+    image: 'src/assets/ecommerce.png',
     github: 'https://github.com/Not-Minimal/Repuestos_Moraga-PW-',
-    demo: 'https://project2.demo.com'
+    demo: 'https://repuestosmoraga.cl'
   },
   {
     title: 'Dashboard Autotruck Diesel SpA',
     description: 'Dashboard interactivo con visualización de datos y reportes en tiempo real.',
     tags: ['Looker Studio', 'Dart', 'Firebase', 'Tailwind'],
-    image: '/images/project3.jpg',
+    image: 'src/assets/dashboard.png',
     github: 'https://github.com/Not-Minimal/Autotruck-Diesel',
-    demo: 'https://project3.demo.com'
+    demo: 'https://autotruckdieselspa.cl'
   }
 ];
 
@@ -85,11 +86,11 @@ const skills = [
     </section>
 
     <!-- Projects Section -->
-<section id="Projects"class="py-20 bg-black">
+<section id="Projects"class="text-white py-20 bg-black">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Mis Proyectos</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 text-white md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map(project => (
             <Card client:load className="bg-zinc-900 border-zinc-800 overflow-hidden hover:border-primary/50 transition-all duration-300">
               <div class="h-48 overflow-hidden">
@@ -102,19 +103,20 @@ const skills = [
               <div class="p-6">
                 <h3 class="text-xl font-bold text-white mb-2">{project.title}</h3>
                 <p class="text-gray-200 mb-4">{project.description}</p>
-                <div class="flex flex-wrap gap-2 mb-4">
+                <div class="flex flex-wrap gap-2 mb-4 text-white">
                   {project.tags.map(tag => (
-                    <a client:load variant="secondary">{tag}</a>
+                  <a client:load variant="secondary">{tag}</a>
                   ))}
                 </div>
+
                 <div class="flex gap-3">
-                  <Button client:load variant="outline" size="sm" className="gap-2">
-                    <Github className="w-4 h-4" />
-                    Código
+                <Button client:load variant="outline" size="sm" className="gap-2">
+                  <Github className="w-4 h-4" />
+                  <a href={project.github}> Codigo</a>
                   </Button>
                   <Button client:load variant="default" size="sm" className="gap-2">
                     <ExternalLink className="w-4 h-4" />
-                    Demo
+                  <a href={project.demo}> Demo</a>
                   </Button>
                 </div>
               </div>
@@ -131,7 +133,7 @@ const skills = [
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skills.map(category => (
-            <Card client:load className="bg-zinc-900 border-zinc-800 hover:border-primary/50 transition-all duration-300">
+            <Card client:load className="bg-dark text-white border-white-200 hover:border-primary/50 transition-all duration-300">
               <div class="p-6">
                 <div class="flex items-center gap-3 mb-4">
                   {category.name === 'Frontend' && <Code className="w-6 h-6 text-primary" />}
